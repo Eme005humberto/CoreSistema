@@ -1,0 +1,19 @@
+## .NET Framework
+bin/
+obj/
+*.user
+*.suo
+*.sln.docstates
+*.vs/
+packages/*
+
+## Visual Studio
+.vs/
+*.sln.ide/
+*/.DS_Store
+
+## Temp
+Debug/
+Release/
+ipch/
+*.log
