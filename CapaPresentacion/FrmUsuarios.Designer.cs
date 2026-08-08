@@ -33,8 +33,6 @@ namespace CapaPresentacion
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(233)))), ((int)(((byte)(251)))));
             this.dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.White;
-            this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -44,6 +42,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUsuarios.ColumnHeadersHeight = 35;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -63,7 +62,6 @@ namespace CapaPresentacion
             this.dgvUsuarios.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(210)))), ((int)(((byte)(235)))));
             this.dgvUsuarios.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
             this.dgvUsuarios.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dgvUsuarios.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvUsuarios.ThemeStyle.HeaderStyle.Height = 35;
             this.dgvUsuarios.ThemeStyle.ReadOnly = true;
             this.dgvUsuarios.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
@@ -98,7 +96,7 @@ namespace CapaPresentacion
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(20, 18);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(71, 22);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(74, 22);
             this.guna2HtmlLabel1.TabIndex = 2;
             this.guna2HtmlLabel1.Text = "Usuarios";
             // 
@@ -171,9 +169,11 @@ namespace CapaPresentacion
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmUsuarios";
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.FrmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvUsuarios;
