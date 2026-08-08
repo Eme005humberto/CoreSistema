@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CARGO.cs" />
+    <Compile Include="CargoService.cs" />
     <Compile Include="CATEGORIA.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="COMPRAS.cs" />

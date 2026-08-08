@@ -38,7 +38,7 @@ namespace CapaDatos_
             cmd.Parameters.Clear();
         }
 
-        public void ModificarUsuarios(int IdCargo, string Cargo)
+        public void ModificarCargo(int IdCargo, string Cargo)
         {
             cmd.Connection = Conexion.Conectar();
             cmd.CommandText = "SP_ACTUALIZAR_CARGO";
@@ -49,7 +49,7 @@ namespace CapaDatos_
             cmd.Parameters.Clear();
         }
 
-        public void EliminarUsuarios(int IdCargo)
+        public void EliminarCargo(int IdCargo)
         {
             cmd.Connection = Conexion.Conectar();
             cmd.CommandText = "SP_ELIMINAR_CARGO";
