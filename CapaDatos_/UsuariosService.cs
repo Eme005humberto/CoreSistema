@@ -1,11 +1,12 @@
 ﻿using CapaDatos;
+using Microsoft.Data.SqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
 
 namespace CapaDatos
 {
@@ -29,15 +30,15 @@ namespace CapaDatos
             return table;
         }
 
-        public void InsertarUsuarios(string nombreCompleto, string DUI,string Usuario,string Clave,string Telefono,int IdCargo,int Activo)
+        public void InsertarUsuarios(string nombreCompleto, string DUI, string Usuario, string Clave, string Telefono, int IdCargo, int Activo)
         {
             cmd.Connection = Conexion.Conectar();
             cmd.CommandText = "SP_AGREGAR_USUARIOS";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
             cmd.Parameters.AddWithValue("@DUI", DUI);
-            cmd.Parameters.AddWithValue("@Usuario",Usuario);
-            cmd.Parameters.AddWithValue("@Clave",Clave);
+            cmd.Parameters.AddWithValue("@Usuario", Usuario);
+            cmd.Parameters.AddWithValue("@Clave", Clave);
             cmd.Parameters.AddWithValue("@Telefono", Telefono);
             cmd.Parameters.AddWithValue("@IdCargo", IdCargo);
             cmd.Parameters.AddWithValue("@Activo", Activo);
@@ -45,7 +46,7 @@ namespace CapaDatos
             cmd.Parameters.Clear();
         }
 
-        public void ModificarUsuarios(int IdUsuario,string nombreCompleto, string DUI, string Usuario, string Clave, string Telefono, int IdCargo, int Activo)
+        public void ModificarUsuarios(int IdUsuario, string nombreCompleto, string DUI, string Usuario, string Clave, string Telefono, int IdCargo, int Activo)
         {
             cmd.Connection = Conexion.Conectar();
             cmd.CommandText = "SP_ACTUALIZAR_USUARIOS";

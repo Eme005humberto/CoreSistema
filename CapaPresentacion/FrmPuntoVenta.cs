@@ -93,5 +93,10 @@ namespace CapaPresentacion
         {
             AbrirFormulario(new FrmCompras());
         }
+
+        private void btnCargos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmCargos());
+        }
     }
 }

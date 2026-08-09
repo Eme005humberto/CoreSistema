@@ -153,10 +153,12 @@
     <Compile Include="CARGO.cs" />
     <Compile Include="CargoService.cs" />
     <Compile Include="CATEGORIA.cs" />
+    <Compile Include="CategoriaService.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="COMPRAS.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="PRODUCTOS.cs" />
+    <Compile Include="ProductosService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDOR.cs" />
     <Compile Include="USUARIO.cs" />

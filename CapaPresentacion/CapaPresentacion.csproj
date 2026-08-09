@@ -315,6 +315,24 @@
     <Compile Include="FrmInventario.Designer.cs">
       <DependentUpon>FrmInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCargos.Designer.cs">
+      <DependentUpon>FrmCargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarCargo.Designer.cs">
+      <DependentUpon>FrmAgregarCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarCargo.Designer.cs">
+      <DependentUpon>FrmModificarCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
