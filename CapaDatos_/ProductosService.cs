@@ -28,7 +28,7 @@ namespace CapaDatos_
             return table;
         }
 
-        public void InsertarProductos(string Producto, int Stock, int IdCategoria)
+        public void InsertarProductos(string Producto, int Stock, int IdCategoria,decimal Precio)
         {
             cmd.Connection = Conexion.Conectar();
             cmd.CommandText = "SP_AGREGAR_PRODUCTOS";
@@ -36,11 +36,12 @@ namespace CapaDatos_
             cmd.Parameters.AddWithValue("@Producto", Producto);
             cmd.Parameters.AddWithValue("@Stock",Stock);
             cmd.Parameters.AddWithValue("@IdCategoria", IdCategoria);
+            cmd.Parameters.AddWithValue("@Precio", Precio);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
         }
 
-        public void ModificarProductos(string Producto, int Stock, int IdCategoria,int IdProducto)
+        public void ModificarProductos(string Producto, int Stock, int IdCategoria, decimal Precio, int IdProducto)
         {
             cmd.Connection = Conexion.Conectar();
             cmd.CommandText = "SP_ACTUALIZAR_PRODUCTOS";
@@ -48,6 +49,7 @@ namespace CapaDatos_
             cmd.Parameters.AddWithValue("@Producto", Producto);
             cmd.Parameters.AddWithValue("@Stock", Stock);
             cmd.Parameters.AddWithValue("@IdCategoria", IdCategoria);
+            cmd.Parameters.AddWithValue("@Precio", Precio);
             cmd.Parameters.AddWithValue("@IdProducto", IdProducto);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
