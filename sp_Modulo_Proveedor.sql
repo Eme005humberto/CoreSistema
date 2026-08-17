@@ -1,0 +1,21 @@
+CREATE PROCEDURE SP_AGREGAR_PROVEEDOR(
+@Proveedor VARCHAR(100),
+@Telefono VARCHAR(12)
+)AS BEGIN
+INSERT INTO PROVEEDOR(Proveedor,Telefono)VALUES(@Proveedor,@Telefono)
+END
+
+CREATE PROCEDURE SP_MODIFICAR_PROVEEDOR(
+@IdProveedor INT,
+@Proveedor VARCHAR(100),
+@Telefono VARCHAR(12)
+)AS BEGIN
+UPDATE PROVEEDOR SET Proveedor = @Proveedor , Telefono = @Telefono WHERE IdProveedor = @IdProveedor
+END
+
+CREATE PROCEDURE SP_ELIMINAR_PROVEEDOR(
+@IdProveedor INT
+)
+AS BEGIN 
+DELETE FROM PROVEEDOR WHERE IdProveedor = @IdProveedor
+END
