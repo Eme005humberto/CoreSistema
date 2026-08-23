@@ -156,6 +156,7 @@
     <Compile Include="CategoriaService.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="COMPRAS.cs" />
+    <Compile Include="CompraService.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="PRODUCTOS.cs" />
     <Compile Include="ProductosService.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="USUARIO.cs" />
     <Compile Include="UsuariosService.cs" />
     <Compile Include="VENTAS.cs" />
+    <Compile Include="VentaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
