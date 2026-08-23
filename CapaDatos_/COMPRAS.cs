@@ -13,6 +13,7 @@ namespace CapaDatos
         public int Cantidad { get; set; }
         public decimal Precio { get; set; }
         public decimal Total { get; set; }
+        public int IdProveedor { get; set; }
         public DateTime FechaCompra { get; set; }
     }
 }
