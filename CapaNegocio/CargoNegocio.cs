@@ -33,5 +33,10 @@ namespace CapaNegocio
         {
             sr.EliminarCargo(Id);
         }
+
+        public void CargarCargos()
+        {
+            sr.ObtenerCategorias();
+        }
     }
 }

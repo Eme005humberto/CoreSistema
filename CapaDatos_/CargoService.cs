@@ -58,5 +58,18 @@ namespace CapaDatos_
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
         }
+
+        public DataTable ObtenerCategorias()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = Conexion.Conectar())
+            {
+                string query = "SELECT IdCargo,Cargo FROM CARGO";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
+        }
     }
 }

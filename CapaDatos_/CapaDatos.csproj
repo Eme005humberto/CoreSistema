@@ -154,7 +154,6 @@
     <Compile Include="CargoService.cs" />
     <Compile Include="CATEGORIA.cs" />
     <Compile Include="CategoriaService.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="COMPRAS.cs" />
     <Compile Include="CompraService.cs" />
     <Compile Include="Conexion.cs" />

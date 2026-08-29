@@ -33,5 +33,7 @@ namespace CapaNegocio
         {
             sr.EliminarCategoria(Id);
         }
+
+       
     }
 }
