@@ -21,9 +21,9 @@ namespace CapaPresentacion
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
-            //
+            // 
             // guna2HtmlLabel1
-            //
+            // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
@@ -32,9 +32,9 @@ namespace CapaPresentacion
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(113, 23);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Agregar Cargo";
-            //
+            // 
             // txtCargo
-            //
+            // 
             this.txtCargo.BorderRadius = 5;
             this.txtCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCargo.DefaultText = "";
@@ -51,20 +51,20 @@ namespace CapaPresentacion
             this.txtCargo.SelectedText = "";
             this.txtCargo.Size = new System.Drawing.Size(260, 32);
             this.txtCargo.TabIndex = 1;
-            //
+            // 
             // guna2HtmlLabel2
-            //
+            // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(20, 63);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(39, 17);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(35, 17);
             this.guna2HtmlLabel2.TabIndex = 2;
             this.guna2HtmlLabel2.Text = "Cargo";
-            //
+            // 
             // btnGuardar
-            //
+            // 
             this.btnGuardar.BorderRadius = 5;
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -80,9 +80,9 @@ namespace CapaPresentacion
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            //
+            // 
             // btnCancelar
-            //
+            // 
             this.btnCancelar.BorderRadius = 5;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -98,9 +98,9 @@ namespace CapaPresentacion
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            //
+            // 
             // FrmAgregarCargo
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -116,8 +116,10 @@ namespace CapaPresentacion
             this.Name = "FrmAgregarCargo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Cargo";
+            this.Load += new System.EventHandler(this.FrmAgregarCargo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;

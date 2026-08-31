@@ -1,3 +1,4 @@
+using CapaDatos;
 using CapaNegocio;
 using System;
 using System.Windows.Forms;
@@ -7,7 +8,7 @@ namespace CapaPresentacion
     public partial class FrmModificarCargo : Form
     {
         CargoNegocio cn = new CargoNegocio();
-
+        private int idCargo = 0;
         public FrmModificarCargo()
         {
             InitializeComponent();
@@ -36,6 +37,17 @@ namespace CapaPresentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+        }
+
+        private void FrmModificarCargo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void CargarDatosParaEdicion(int IdCargo, string Cargo)
+        {
+            idCargo = IdCargo;
+            txtCargo.Text = Cargo;
         }
     }
 }

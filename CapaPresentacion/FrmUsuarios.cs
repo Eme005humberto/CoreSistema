@@ -8,8 +8,7 @@ namespace CapaPresentacion
 {
     public partial class FrmUsuarios : Form
     {
-        private string id = null;
-        private bool editar = false;
+        
         UsuarioNegocio us = new UsuarioNegocio();
         public void MostrarDatos()
         {
@@ -26,7 +25,10 @@ namespace CapaPresentacion
         {
             using (var form = new FrmAgregarUsuario())
             {
-                form.ShowDialog(this);
+                if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    MostrarDatos(); // refresca el grid después de agregar
+                }
             }
         }
 
@@ -79,6 +81,13 @@ namespace CapaPresentacion
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
             MostrarDatos();
+            if (dgvUsuarios.Columns.Contains("IdCargo"))
+                dgvUsuarios.Columns["IdCargo"].Visible = false;
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -23,20 +23,20 @@ namespace CapaPresentacion
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
-            //
+            // 
             // guna2HtmlLabel1
-            //
+            // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(20, 15);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(131, 23);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(126, 23);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Modificar Cargo";
-            //
+            // 
             // txtCargo
-            //
+            // 
             this.txtCargo.BorderRadius = 5;
             this.txtCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCargo.DefaultText = "";
@@ -53,9 +53,9 @@ namespace CapaPresentacion
             this.txtCargo.SelectedText = "";
             this.txtCargo.Size = new System.Drawing.Size(260, 32);
             this.txtCargo.TabIndex = 1;
-            //
+            // 
             // txtIdCargo
-            //
+            // 
             this.txtIdCargo.BorderRadius = 5;
             this.txtIdCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtIdCargo.DefaultText = "";
@@ -68,35 +68,36 @@ namespace CapaPresentacion
             this.txtIdCargo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.txtIdCargo.Location = new System.Drawing.Point(120, 98);
             this.txtIdCargo.Name = "txtIdCargo";
+            this.txtIdCargo.PlaceholderText = "";
             this.txtIdCargo.ReadOnly = true;
             this.txtIdCargo.SelectedText = "";
             this.txtIdCargo.Size = new System.Drawing.Size(120, 32);
             this.txtIdCargo.TabIndex = 2;
-            //
+            // 
             // guna2HtmlLabel2
-            //
+            // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(20, 63);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(39, 17);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(35, 17);
             this.guna2HtmlLabel2.TabIndex = 3;
             this.guna2HtmlLabel2.Text = "Cargo";
-            //
+            // 
             // guna2HtmlLabel3
-            //
+            // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(20, 106);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(19, 17);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(16, 17);
             this.guna2HtmlLabel3.TabIndex = 4;
             this.guna2HtmlLabel3.Text = "ID";
-            //
+            // 
             // btnGuardar
-            //
+            // 
             this.btnGuardar.BorderRadius = 5;
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -112,9 +113,9 @@ namespace CapaPresentacion
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            //
+            // 
             // btnCancelar
-            //
+            // 
             this.btnCancelar.BorderRadius = 5;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -130,9 +131,9 @@ namespace CapaPresentacion
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            //
+            // 
             // FrmModificarCargo
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -150,8 +151,10 @@ namespace CapaPresentacion
             this.Name = "FrmModificarCargo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Modificar Cargo";
+            this.Load += new System.EventHandler(this.FrmModificarCargo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;

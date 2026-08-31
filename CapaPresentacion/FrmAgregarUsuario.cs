@@ -52,12 +52,7 @@ namespace CapaPresentacion
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            txtNombre.Clear();
-            txtDUI.Clear();
-            txtUsuario.Clear();
-            txtClave.Clear();
-            cboRol.Enabled = false;
-            ChkActivo.Enabled = false;
+            DialogResult = DialogResult.Cancel;
         }
 
         private void FrmAgregarUsuario_Load(object sender, EventArgs e)

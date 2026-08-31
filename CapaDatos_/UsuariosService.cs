@@ -21,12 +21,21 @@ namespace CapaDatos
 
         public DataTable MostrarUsuarios()
         {
-            cmd.Connection = Conexion.Conectar();
-            cmd.CommandText = "SELECT * FROM USUARIOS";
-            cmd.CommandType = CommandType.Text;
-            leer = cmd.ExecuteReader();
-            table.Load(leer);
-            Conexion.Conectar().Close();
+            DataTable table = new DataTable(); 
+            using (SqlConnection conn = Conexion.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(@"
+            SELECT 
+                u.IdUsuario, u.NombreCompleto, u.DUI, u.Usuario, u.Clave,
+                u.Telefono, u.IdCargo, c.Cargo, u.Activo
+            FROM USUARIOS u
+            INNER JOIN CARGO c ON u.IdCargo = c.IdCargo", conn);
+
+                using (SqlDataReader leer = cmd.ExecuteReader())
+                {
+                    table.Load(leer);
+                }
+            }
             return table;
         }
 

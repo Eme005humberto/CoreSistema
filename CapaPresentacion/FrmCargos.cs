@@ -1,4 +1,6 @@
+using CapaDatos;
 using CapaNegocio;
+using DevExpress.XtraRichEdit.Model;
 using System;
 using System.Windows.Forms;
 
@@ -22,16 +24,35 @@ namespace CapaPresentacion
         {
             using (var form = new FrmAgregarCargo())
             {
-                form.ShowDialog(this);
+                if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    MostrarDatos(); // refresca el grid después de agregar
+                }
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            using (var form = new FrmModificarCargo())
+            //Validamos el registro a modificar
+            if (dgvCargos.CurrentRow == null)
             {
-                form.ShowDialog(this);
+                MessageBox.Show("Seleccione un usuario para editar.");
+                return;
             }
+
+            // Extraemos los datos de la fila seleccionada del DataGridView
+            int id = Convert.ToInt32(dgvCargos.CurrentRow.Cells["IdCargo"].Value);
+            string cargo = dgvCargos.CurrentRow.Cells["Cargo"].Value.ToString();
+
+            FrmModificarCargo frm = new FrmModificarCargo();
+            frm.CargarDatosParaEdicion(id,cargo);
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Usuario modificado correctamente.");
+                MostrarDatos();
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

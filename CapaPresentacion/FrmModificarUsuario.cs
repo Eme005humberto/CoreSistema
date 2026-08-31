@@ -29,9 +29,9 @@ namespace CapaPresentacion
                 int idCargo = Convert.ToInt32(cboRol.SelectedValue);
                 int activo = ChkActivo.Checked ? 1 : 0; // ajusta al control que uses
 
-                if (idUsuario == 0)
+                if (idUsuario != 0)
                 {
-                    // INSERTAR
+                    // ACTUALIZAR
                     usuarioNegocio.updateData(
                         idUsuario,
                         txtNombre.Text.Trim(),
