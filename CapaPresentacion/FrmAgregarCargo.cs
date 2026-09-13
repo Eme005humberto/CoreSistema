@@ -34,26 +34,7 @@ namespace CapaPresentacion
 
         private void FrmAgregarCargo_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCargo.Text))
-            {
-                MessageBox.Show("Ingrese un cargo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            try
-            {
-                if (idCargo == 0)
-                {
-                    // INSERTAR
-                    cn.insertData(
-                        txtCargo.Text.Trim()
-                        );
-                }
-                DialogResult = DialogResult.OK;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar: " + ex.Message);
-            }
+           
         }
 
         

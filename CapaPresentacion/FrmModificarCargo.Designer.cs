@@ -17,11 +17,11 @@ namespace CapaPresentacion
         {
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCargo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtIdCargo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtIdCargo = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -54,26 +54,6 @@ namespace CapaPresentacion
             this.txtCargo.Size = new System.Drawing.Size(260, 32);
             this.txtCargo.TabIndex = 1;
             // 
-            // txtIdCargo
-            // 
-            this.txtIdCargo.BorderRadius = 5;
-            this.txtIdCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIdCargo.DefaultText = "";
-            this.txtIdCargo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtIdCargo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtIdCargo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIdCargo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIdCargo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            this.txtIdCargo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtIdCargo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            this.txtIdCargo.Location = new System.Drawing.Point(120, 98);
-            this.txtIdCargo.Name = "txtIdCargo";
-            this.txtIdCargo.PlaceholderText = "";
-            this.txtIdCargo.ReadOnly = true;
-            this.txtIdCargo.SelectedText = "";
-            this.txtIdCargo.Size = new System.Drawing.Size(120, 32);
-            this.txtIdCargo.TabIndex = 2;
-            // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
@@ -84,17 +64,6 @@ namespace CapaPresentacion
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(35, 17);
             this.guna2HtmlLabel2.TabIndex = 3;
             this.guna2HtmlLabel2.Text = "Cargo";
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(20, 106);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(16, 17);
-            this.guna2HtmlLabel3.TabIndex = 4;
-            this.guna2HtmlLabel3.Text = "ID";
             // 
             // btnGuardar
             // 
@@ -132,6 +101,37 @@ namespace CapaPresentacion
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(20, 106);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(16, 17);
+            this.guna2HtmlLabel3.TabIndex = 4;
+            this.guna2HtmlLabel3.Text = "ID";
+            // 
+            // txtIdCargo
+            // 
+            this.txtIdCargo.BorderRadius = 5;
+            this.txtIdCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIdCargo.DefaultText = "";
+            this.txtIdCargo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtIdCargo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtIdCargo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIdCargo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIdCargo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            this.txtIdCargo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtIdCargo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            this.txtIdCargo.Location = new System.Drawing.Point(120, 98);
+            this.txtIdCargo.Name = "txtIdCargo";
+            this.txtIdCargo.PlaceholderText = "";
+            this.txtIdCargo.ReadOnly = true;
+            this.txtIdCargo.SelectedText = "";
+            this.txtIdCargo.Size = new System.Drawing.Size(120, 32);
+            this.txtIdCargo.TabIndex = 2;
+            // 
             // FrmModificarCargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,10 +159,10 @@ namespace CapaPresentacion
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtCargo;
-        private Guna.UI2.WinForms.Guna2TextBox txtIdCargo;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2TextBox txtIdCargo;
     }
 }

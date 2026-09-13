@@ -17,6 +17,7 @@ namespace CapaPresentacion
 
         private void MostrarDatos()
         {
+            CargoNegocio cn = new CargoNegocio();
             dgvCargos.DataSource = cn.MostrarCargos();
         }
 
@@ -33,13 +34,7 @@ namespace CapaPresentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //Validamos el registro a modificar
-            if (dgvCargos.CurrentRow == null)
-            {
-                MessageBox.Show("Seleccione un usuario para editar.");
-                return;
-            }
-
+           
             // Extraemos los datos de la fila seleccionada del DataGridView
             int id = Convert.ToInt32(dgvCargos.CurrentRow.Cells["IdCargo"].Value);
             string cargo = dgvCargos.CurrentRow.Cells["Cargo"].Value.ToString();
@@ -50,14 +45,26 @@ namespace CapaPresentacion
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Usuario modificado correctamente.");
-                MostrarDatos();
+                
             }
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seleccione un cargo para eliminar", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dgvCargos.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un usuario para eliminar.");
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvCargos.CurrentRow.Cells["IdCargo"].Value);
+
+            if (MessageBox.Show("¿Desea eliminar este usuario?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                cn.deleteData(id);
+                MostrarDatos();
+            }
         }
 
         private void FrmCargos_Load(object sender, EventArgs e)
