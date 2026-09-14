@@ -16,13 +16,13 @@ namespace CapaPresentacion
 
         public void CargarDatos(int idCargo, string cargo)
         {
-            txtIdCargo.Text = idCargo.ToString();
+            idCargo.ToString();
             txtCargo.Text = cargo;
         }
 
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int idCargo = int.Parse(txtIdCargo.Text);
             cn.updateData(idCargo, txtCargo.Text.Trim());
             MessageBox.Show("Cargo modificado correctamente", "Cargos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DialogResult = DialogResult.OK;
@@ -35,13 +35,14 @@ namespace CapaPresentacion
 
         private void FrmModificarCargo_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         public void CargarDatosParaEdicion(int IdCargo, string Cargo)
         {
             idCargo = IdCargo;
             txtCargo.Text = Cargo;
+            txtIdCargo.Text = IdCargo.ToString();
         }
     }
 }
