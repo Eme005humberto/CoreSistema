@@ -1,3 +1,4 @@
+using CapaNegocio;
 using System;
 using System.Windows.Forms;
 
@@ -5,6 +6,7 @@ namespace CapaPresentacion
 {
     public partial class FrmAgregarCategoria : Form
     {
+        CategoriaNegocio nc = new CategoriaNegocio();
         public FrmAgregarCategoria()
         {
             InitializeComponent();
@@ -17,6 +19,10 @@ namespace CapaPresentacion
                 MessageBox.Show("Ingrese el nombre de la categoria", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+           
+
+            nc.insertData(txtNombre.Text.Trim());
+            MessageBox.Show("Cargo guardado correctamente", "Cargos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DialogResult = DialogResult.OK;
         }
 

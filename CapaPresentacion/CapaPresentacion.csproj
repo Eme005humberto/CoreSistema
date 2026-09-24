@@ -383,8 +383,14 @@
     <EmbeddedResource Include="FrmAgregarCargo.resx">
       <DependentUpon>FrmAgregarCargo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarCategoria.resx">
+      <DependentUpon>FrmAgregarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarUsuario.resx">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCategorias.resx">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCompras.resx">
       <DependentUpon>FrmCompras.cs</DependentUpon>
@@ -394,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModificarCargo.resx">
       <DependentUpon>FrmModificarCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarCategoria.resx">
+      <DependentUpon>FrmModificarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModificarUsuario.resx">
       <DependentUpon>FrmModificarUsuario.cs</DependentUpon>

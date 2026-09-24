@@ -33,8 +33,6 @@ namespace CapaPresentacion
             this.dgvCategorias.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(233)))), ((int)(((byte)(251)))));
             this.dgvCategorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCategorias.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCategorias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -64,7 +62,6 @@ namespace CapaPresentacion
             this.dgvCategorias.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(210)))), ((int)(((byte)(235)))));
             this.dgvCategorias.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
             this.dgvCategorias.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dgvCategorias.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvCategorias.ThemeStyle.HeaderStyle.Height = 35;
             this.dgvCategorias.ThemeStyle.ReadOnly = true;
             this.dgvCategorias.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
@@ -99,7 +96,7 @@ namespace CapaPresentacion
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(20, 18);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(83, 22);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(90, 22);
             this.guna2HtmlLabel1.TabIndex = 2;
             this.guna2HtmlLabel1.Text = "Categorias";
             // 
@@ -172,9 +169,11 @@ namespace CapaPresentacion
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCategorias";
             this.Text = "Categorias";
+            this.Load += new System.EventHandler(this.FrmCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvCategorias;

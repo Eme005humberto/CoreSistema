@@ -1,3 +1,4 @@
+using CapaNegocio;
 using System;
 using System.Windows.Forms;
 
@@ -5,6 +6,7 @@ namespace CapaPresentacion
 {
     public partial class FrmCategorias : Form
     {
+        CategoriaNegocio nc = new CategoriaNegocio();
         public FrmCategorias()
         {
             InitializeComponent();
@@ -14,7 +16,10 @@ namespace CapaPresentacion
         {
             using (var form = new FrmAgregarCategoria())
             {
-                form.ShowDialog(this);
+                if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    MostrarDatos(); // refresca el grid después de agregar
+                }
             }
         }
 
@@ -22,13 +27,27 @@ namespace CapaPresentacion
         {
             using (var form = new FrmModificarCategoria())
             {
-                form.ShowDialog(this);
+                if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    MostrarDatos(); // refresca el grid después de agregar
+                }
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Seleccione una categoria para eliminar", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void FrmCategorias_Load(object sender, EventArgs e)
+        {
+            MostrarDatos(); //Invocamos el metodo para cargar las categorias 
+        }
+
+        private void MostrarDatos()
+        {
+            CargoNegocio cn = new CargoNegocio();
+            dgvCategorias.DataSource = nc.MostrarCategorias();
         }
     }
 }

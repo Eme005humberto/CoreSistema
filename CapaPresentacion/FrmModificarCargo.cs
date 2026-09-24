@@ -23,6 +23,11 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtCargo.Text))
+            {
+                MessageBox.Show("Ingrese el nombre del cargo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             cn.updateData(idCargo, txtCargo.Text.Trim());
             MessageBox.Show("Cargo modificado correctamente", "Cargos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DialogResult = DialogResult.OK;
