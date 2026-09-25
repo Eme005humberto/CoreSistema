@@ -30,5 +30,10 @@ namespace CapaPresentacion
         {
             DialogResult = DialogResult.Cancel;
         }
+
+        private void FrmAgregarCategoria_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

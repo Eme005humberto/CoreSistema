@@ -116,6 +116,7 @@ namespace CapaPresentacion
             this.Name = "FrmAgregarCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Categoria";
+            this.Load += new System.EventHandler(this.FrmAgregarCategoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

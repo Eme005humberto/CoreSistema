@@ -14,7 +14,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)   
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
