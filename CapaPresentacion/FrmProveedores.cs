@@ -25,18 +25,35 @@ namespace CapaPresentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            using (var form = new FrmModificarProveedor())
+            // Extraemos los datos de la fila seleccionada del DataGridView
+            int id = Convert.ToInt32(dgvProveedores.CurrentRow.Cells["IdProveedor"].Value);
+            string proveedor = dgvProveedores.CurrentRow.Cells["Proveedor"].Value.ToString();
+            string telefono = dgvProveedores.CurrentRow.Cells["Telefono"].Value.ToString();
+
+            FrmModificarProveedor frm = new FrmModificarProveedor();
+            frm.CargarDatosParaEdicion(id, proveedor,telefono);
+
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                if (form.ShowDialog(this) == DialogResult.OK)
-                {
-                    MostrarDatos(); // refresca el grid después de agregar
-                }
+                MostrarDatos();
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seleccione un proveedor para eliminar", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dgvProveedores.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un proveedor para eliminar.");
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvProveedores.CurrentRow.Cells["IdProveedor"].Value);
+
+            if (MessageBox.Show("¿Desea eliminar este proveedor?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                pr.DeleteData(id);
+                MostrarDatos();
+            }
         }
 
         private void FrmProveedores_Load(object sender, EventArgs e)
@@ -46,7 +63,7 @@ namespace CapaPresentacion
 
         private void MostrarDatos()
         {
-            CargoNegocio cn = new CargoNegocio();
+            ProveedorNegocio pr = new ProveedorNegocio();
             dgvProveedores.DataSource = pr.MostrarProveedor();
         }
     }

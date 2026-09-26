@@ -42,7 +42,7 @@ namespace CapaDatos_
         public void ModificarProveedor(string Proveedor, string Telefono,int IdProveedor)
         {
             cmd.Connection = Conexion.Conectar();
-            cmd.CommandText = "SP_ACTUALIZAR_PROVEEDOR";
+            cmd.CommandText = "SP_MODIFICAR_PROVEEDOR";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Proveedor", Proveedor);
             cmd.Parameters.AddWithValue("@Telefono", Telefono);

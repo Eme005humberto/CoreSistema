@@ -407,6 +407,9 @@
     <EmbeddedResource Include="FrmModificarCategoria.resx">
       <DependentUpon>FrmModificarCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarProveedor.resx">
+      <DependentUpon>FrmModificarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmModificarUsuario.resx">
       <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
