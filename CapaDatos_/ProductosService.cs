@@ -17,6 +17,17 @@ namespace CapaDatos_
         DataTable table = new DataTable();
         SqlCommand cmd = new SqlCommand();
 
+        public DataTable MostrarCategorias()
+        {
+            cmd.Connection = Conexion.Conectar();
+            cmd.CommandText = "SELECT * FROM CATEGORIA";
+            cmd.CommandType = CommandType.Text;
+            leer = cmd.ExecuteReader();
+            table.Load(leer);
+            Conexion.Conectar().Close();
+            return table;
+        }
+
         public DataTable MostrarProductos()
         {
             cmd.Connection = Conexion.Conectar();
@@ -58,7 +69,7 @@ namespace CapaDatos_
         public void EliminarProductos (int IdProducto)
         {
             cmd.Connection = Conexion.Conectar();
-            cmd.CommandText = "SP_ELIMINAR_USUARIOS";
+            cmd.CommandText = "SP_ELIMINAR_PRODUCTOS";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdProducto", IdProducto);
             cmd.ExecuteNonQuery();

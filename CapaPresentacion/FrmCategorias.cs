@@ -25,11 +25,22 @@ namespace CapaPresentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            if (dgvCategorias.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione una categoría para modificar.");
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvCategorias.CurrentRow.Cells["IdCategoria"].Value);
+            string categoria = dgvCategorias.CurrentRow.Cells["Categoria"].Value.ToString();
+
             using (var form = new FrmModificarCategoria())
             {
+                form.CargarDatosParaEdicion(id, categoria);
+
                 if (form.ShowDialog(this) == DialogResult.OK)
                 {
-                    MostrarDatos(); // refresca el grid después de agregar
+                    MostrarDatos(); // refresca el grid después de modificar
                 }
             }
         }

@@ -19,6 +19,13 @@ namespace CapaNegocio
             return table;
         }
 
+        public DataTable MostrarCategorias()
+        {
+            DataTable tb = new DataTable();
+            tb = sr.MostrarCategorias();
+            return tb;
+        }
+
         public void insertData(string Producto, int Stock, int IdCategoria, decimal Precio)
         {
             sr.InsertarProductos(Producto, Stock, IdCategoria, Precio);

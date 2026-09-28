@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,30 +13,74 @@ namespace CapaPresentacion
 {
     public partial class FrmInventario : Form
     {
+        ProductosNegocio pr = new ProductosNegocio();
         public FrmInventario()
         {
             InitializeComponent();
+        }
+
+        private void MostrarDatos()
+        {
+            ProductosNegocio pr = new ProductosNegocio();
+            dgvInventario.DataSource = pr.MostrarInformacion();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             using (var form = new FrmAgregarProducto())
             {
-                form.ShowDialog(this);
+                if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    MostrarDatos(); // refresca el grid después de agregar
+                }
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            if (dgvInventario.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un producto para modificar.");
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvInventario.CurrentRow.Cells["IdProducto"].Value);
+            string nombre = dgvInventario.CurrentRow.Cells["Producto"].Value.ToString();
+            decimal precio = Convert.ToDecimal(dgvInventario.CurrentRow.Cells["Precio"].Value);
+            int stock = Convert.ToInt32(dgvInventario.CurrentRow.Cells["Stock"].Value);
+            int idCategoria = Convert.ToInt32(dgvInventario.CurrentRow.Cells["IdCategoria"].Value);
+
             using (var form = new FrmModificarProducto())
             {
-                form.ShowDialog(this);
+                form.CargarDatosParaEdicion(id, nombre, precio, stock, idCategoria);
+
+                if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    MostrarDatos(); // refresca el grid después de modificar
+                }
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seleccione un producto para eliminar", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dgvInventario.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un producto para eliminar.");
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvInventario.CurrentRow.Cells["IdProducto"].Value);
+
+            if (MessageBox.Show("¿Desea eliminar este Producto?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                pr.deleteData(id);
+                MostrarDatos();
+            }
+        }
+
+        private void FrmInventario_Load(object sender, EventArgs e)
+        {
+            MostrarDatos();
         }
     }
 }
