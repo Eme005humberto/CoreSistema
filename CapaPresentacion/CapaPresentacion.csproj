@@ -318,6 +318,12 @@
     <Compile Include="FrmInventario.Designer.cs">
       <DependentUpon>FrmInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCobro.Designer.cs">
+      <DependentUpon>FrmCobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCargos.cs">
       <SubType>Form</SubType>
     </Compile>
