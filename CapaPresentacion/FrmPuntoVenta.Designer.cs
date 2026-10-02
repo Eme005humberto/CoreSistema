@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPuntoVenta));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPuntoVenta));
             this.txtCantidad = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnCargos = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.btnReportes = new Guna.UI2.WinForms.Guna2Button();
             this.btnCategorias = new Guna.UI2.WinForms.Guna2Button();
             this.btnProveedores = new Guna.UI2.WinForms.Guna2Button();
@@ -53,35 +56,44 @@
             this.btnCancelarVenta = new Guna.UI2.WinForms.Guna2Button();
             this.pnlContenido = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlVentas = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCargos = new Guna.UI2.WinForms.Guna2Button();
             this.lblModo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblBuscarCaption = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            this.pnlSugerencias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).BeginInit();
             this.panelTotal.SuspendLayout();
-            this.pnlSugerencias.SuspendLayout();
             this.pnlContenido.SuspendLayout();
             this.pnlVentas.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // txtCantidad
-            //
+            // 
             this.txtCantidad.BackColor = System.Drawing.Color.Transparent;
             this.txtCantidad.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCantidad.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCantidad.Location = new System.Drawing.Point(374, 12);
-            this.txtCantidad.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
-            this.txtCantidad.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.txtCantidad.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.txtCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 36);
             this.txtCantidad.TabIndex = 0;
-            this.txtCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            //
+            this.txtCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // btnAgregar
-            //
+            // 
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -96,9 +108,9 @@
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            //
+            // 
             // guna2Panel1
-            //
+            // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Purple;
             this.guna2Panel1.Controls.Add(this.btnCargos);
             this.guna2Panel1.Controls.Add(this.guna2Button4);
@@ -114,9 +126,66 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(180, 490);
             this.guna2Panel1.TabIndex = 2;
-            //
+            // 
+            // btnCargos
+            // 
+            this.btnCargos.BorderRadius = 3;
+            this.btnCargos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCargos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCargos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCargos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCargos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnCargos.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCargos.ForeColor = System.Drawing.Color.White;
+            this.btnCargos.Image = ((System.Drawing.Image)(resources.GetObject("btnCargos.Image")));
+            this.btnCargos.Location = new System.Drawing.Point(12, 417);
+            this.btnCargos.Name = "btnCargos";
+            this.btnCargos.Size = new System.Drawing.Size(150, 38);
+            this.btnCargos.TabIndex = 10;
+            this.btnCargos.Text = "Cargos";
+            this.btnCargos.Click += new System.EventHandler(this.btnCargos_Click);
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.BorderRadius = 3;
+            this.guna2Button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
+            this.guna2Button4.Location = new System.Drawing.Point(12, 368);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(150, 38);
+            this.guna2Button4.TabIndex = 9;
+            this.guna2Button4.Text = "Compras";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.BorderRadius = 3;
+            this.guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
+            this.guna2Button3.Location = new System.Drawing.Point(12, 319);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(150, 38);
+            this.guna2Button3.TabIndex = 8;
+            this.guna2Button3.Text = "Usuarios";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
             // btnReportes
-            //
+            // 
             this.btnReportes.BorderRadius = 3;
             this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -133,9 +202,9 @@
             this.btnReportes.TabIndex = 7;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            //
+            // 
             // btnCategorias
-            //
+            // 
             this.btnCategorias.BorderRadius = 3;
             this.btnCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategorias.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -152,9 +221,9 @@
             this.btnCategorias.TabIndex = 6;
             this.btnCategorias.Text = "Categorias";
             this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
-            //
+            // 
             // btnProveedores
-            //
+            // 
             this.btnProveedores.BorderRadius = 3;
             this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProveedores.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -171,9 +240,9 @@
             this.btnProveedores.TabIndex = 4;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
-            //
+            // 
             // btnVentas
-            //
+            // 
             this.btnVentas.BorderRadius = 3;
             this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVentas.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -190,9 +259,9 @@
             this.btnVentas.TabIndex = 3;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            //
+            // 
             // btnInventario
-            //
+            // 
             this.btnInventario.BackColor = System.Drawing.Color.Indigo;
             this.btnInventario.BorderRadius = 3;
             this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -210,9 +279,9 @@
             this.btnInventario.TabIndex = 1;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
-            //
+            // 
             // guna2HtmlLabel1
-            //
+            // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
@@ -221,16 +290,16 @@
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(108, 15);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Sistema de Ventas";
-            //
+            // 
             // cboBuscarProducto
-            //
+            // 
             this.cboBuscarProducto.BorderRadius = 8;
+            this.cboBuscarProducto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cboBuscarProducto.DefaultText = "";
             this.cboBuscarProducto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.cboBuscarProducto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.cboBuscarProducto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.cboBuscarProducto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.cboBuscarProducto.FillColor = System.Drawing.Color.White;
             this.cboBuscarProducto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cboBuscarProducto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cboBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -238,13 +307,14 @@
             this.cboBuscarProducto.Location = new System.Drawing.Point(34, 13);
             this.cboBuscarProducto.Name = "cboBuscarProducto";
             this.cboBuscarProducto.PlaceholderText = "Buscar producto...";
+            this.cboBuscarProducto.SelectedText = "";
             this.cboBuscarProducto.Size = new System.Drawing.Size(291, 36);
             this.cboBuscarProducto.TabIndex = 3;
-            this.cboBuscarProducto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cboBuscarProducto_MouseClick);
             this.cboBuscarProducto.TextChanged += new System.EventHandler(this.cboBuscarProducto_TextChanged);
-            //
+            this.cboBuscarProducto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cboBuscarProducto_MouseClick);
+            // 
             // btnFlecha
-            //
+            // 
             this.btnFlecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFlecha.FillColor = System.Drawing.Color.White;
             this.btnFlecha.Font = new System.Drawing.Font("Segoe UI", 7F);
@@ -252,17 +322,15 @@
             this.btnFlecha.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnFlecha.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnFlecha.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.btnFlecha.Image = null;
-            this.btnFlecha.ImageSize = new System.Drawing.Size(20, 20);
             this.btnFlecha.Location = new System.Drawing.Point(325, 13);
             this.btnFlecha.Name = "btnFlecha";
             this.btnFlecha.Size = new System.Drawing.Size(30, 36);
             this.btnFlecha.TabIndex = 13;
-            this.btnFlecha.Text = "5";
+            this.btnFlecha.Text = "x";
             this.btnFlecha.Click += new System.EventHandler(this.btnFlecha_Click);
-            //
+            // 
             // pnlSugerencias
-            //
+            // 
             this.pnlSugerencias.BackColor = System.Drawing.Color.White;
             this.pnlSugerencias.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.pnlSugerencias.BorderRadius = 6;
@@ -272,46 +340,23 @@
             this.pnlSugerencias.Size = new System.Drawing.Size(321, 170);
             this.pnlSugerencias.TabIndex = 14;
             this.pnlSugerencias.Visible = false;
-            //
+            // 
             // lstSugerencias
-            //
+            // 
             this.lstSugerencias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstSugerencias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstSugerencias.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lstSugerencias.FormattingEnabled = true;
-            this.lstSugerencias.ItemHeight = 12;
+            this.lstSugerencias.ItemHeight = 15;
             this.lstSugerencias.Location = new System.Drawing.Point(0, 0);
             this.lstSugerencias.Name = "lstSugerencias";
             this.lstSugerencias.Size = new System.Drawing.Size(321, 170);
             this.lstSugerencias.TabIndex = 0;
             this.lstSugerencias.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstSugerencias_MouseClick);
             this.lstSugerencias.DoubleClick += new System.EventHandler(this.lstSugerencias_DoubleClick);
-            //
-            //
-            // lblModo
-            //
-            this.lblModo.BackColor = System.Drawing.Color.Transparent;
-            this.lblModo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblModo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            this.lblModo.Location = new System.Drawing.Point(34, 60);
-            this.lblModo.Name = "lblModo";
-            this.lblModo.Size = new System.Drawing.Size(80, 17);
-            this.lblModo.TabIndex = 4;
-            this.lblModo.Text = "Carrito";
-            //
-            // lblBuscarCaption
-            //
-            this.lblBuscarCaption.BackColor = System.Drawing.Color.Transparent;
-            this.lblBuscarCaption.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.lblBuscarCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblBuscarCaption.Location = new System.Drawing.Point(26, 46);
-            this.lblBuscarCaption.Name = "lblBuscarCaption";
-            this.lblBuscarCaption.Size = new System.Drawing.Size(95, 14);
-            this.lblBuscarCaption.TabIndex = 11;
-            this.lblBuscarCaption.Text = "Buscar producto:";
-            //
+            // 
             // dgvCarrito
-            //
+            // 
             this.dgvCarrito.AllowUserToAddRows = false;
             this.dgvCarrito.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(216)))), ((int)(((byte)(189)))));
@@ -355,9 +400,9 @@
             this.dgvCarrito.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(169)))), ((int)(((byte)(107)))));
             this.dgvCarrito.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCarrito.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellDoubleClick);
-            //
+            // 
             // panelTotal
-            //
+            // 
             this.panelTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panelTotal.BorderRadius = 8;
             this.panelTotal.Controls.Add(this.lblTotalValor);
@@ -366,20 +411,20 @@
             this.panelTotal.Name = "panelTotal";
             this.panelTotal.Size = new System.Drawing.Size(180, 60);
             this.panelTotal.TabIndex = 6;
-            //
+            // 
             // lblTotalValor
-            //
+            // 
             this.lblTotalValor.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalValor.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblTotalValor.Location = new System.Drawing.Point(10, 28);
             this.lblTotalValor.Name = "lblTotalValor";
-            this.lblTotalValor.Size = new System.Drawing.Size(40, 19);
+            this.lblTotalValor.Size = new System.Drawing.Size(35, 20);
             this.lblTotalValor.TabIndex = 1;
             this.lblTotalValor.Text = "0.00";
-            //
+            // 
             // lblTotal
-            //
+            // 
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.DarkGreen;
@@ -388,9 +433,9 @@
             this.lblTotal.Size = new System.Drawing.Size(34, 18);
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Total";
-            //
+            // 
             // btnCobrar
-            //
+            // 
             this.btnCobrar.BorderRadius = 8;
             this.btnCobrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCobrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -406,9 +451,9 @@
             this.btnCobrar.TabIndex = 7;
             this.btnCobrar.Text = "COBRAR";
             this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
-            //
+            // 
             // btnCancelarVenta
-            //
+            // 
             this.btnCancelarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCancelarVenta.BorderRadius = 8;
             this.btnCancelarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -425,19 +470,19 @@
             this.btnCancelarVenta.TabIndex = 8;
             this.btnCancelarVenta.Text = "CANCELAR";
             this.btnCancelarVenta.Click += new System.EventHandler(this.btnCancelarVenta_Click);
-            //
+            // 
             // pnlContenido
-            //
+            // 
             this.pnlContenido.BackColor = System.Drawing.Color.White;
             this.pnlContenido.Controls.Add(this.pnlVentas);
             this.pnlContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenido.Location = new System.Drawing.Point(180, 0);
-            this.pnlContenido.Name = "pnlContenu";
+            this.pnlContenido.Name = "pnlContenido";
             this.pnlContenido.Size = new System.Drawing.Size(620, 490);
             this.pnlContenido.TabIndex = 9;
-            //
+            // 
             // pnlVentas
-            //
+            // 
             this.pnlVentas.BackColor = System.Drawing.Color.White;
             this.pnlVentas.Controls.Add(this.btnCancelarVenta);
             this.pnlVentas.Controls.Add(this.btnCobrar);
@@ -455,66 +500,31 @@
             this.pnlVentas.Name = "pnlVentas";
             this.pnlVentas.Size = new System.Drawing.Size(620, 490);
             this.pnlVentas.TabIndex = 10;
-            //
-            // guna2Button3
-            //
-            this.guna2Button3.BorderRadius = 3;
-            this.guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.Location = new System.Drawing.Point(12, 319);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(150, 38);
-            this.guna2Button3.TabIndex = 8;
-            this.guna2Button3.Text = "Usuarios";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
-            //
-            // guna2Button4
-            //
-            this.guna2Button4.BorderRadius = 3;
-            this.guna2Button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.Location = new System.Drawing.Point(12, 368);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(150, 38);
-            this.guna2Button4.TabIndex = 9;
-            this.guna2Button4.Text = "Compras";
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
-            //
-            // btnCargos
-            //
-            this.btnCargos.BorderRadius = 3;
-            this.btnCargos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCargos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCargos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCargos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCargos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCargos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnCargos.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCargos.ForeColor = System.Drawing.Color.White;
-            this.btnCargos.Image = ((System.Drawing.Image)(resources.GetObject("btnCargos.Image")));
-            this.btnCargos.Location = new System.Drawing.Point(12, 417);
-            this.btnCargos.Name = "btnCargos";
-            this.btnCargos.Size = new System.Drawing.Size(150, 38);
-            this.btnCargos.TabIndex = 10;
-            this.btnCargos.Text = "Cargos";
-            this.btnCargos.Click += new System.EventHandler(this.btnCargos_Click);
-            //
+            // 
+            // lblModo
+            // 
+            this.lblModo.BackColor = System.Drawing.Color.Transparent;
+            this.lblModo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblModo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
+            this.lblModo.Location = new System.Drawing.Point(34, 60);
+            this.lblModo.Name = "lblModo";
+            this.lblModo.Size = new System.Drawing.Size(41, 17);
+            this.lblModo.TabIndex = 4;
+            this.lblModo.Text = "Carrito";
+            // 
+            // lblBuscarCaption
+            // 
+            this.lblBuscarCaption.BackColor = System.Drawing.Color.Transparent;
+            this.lblBuscarCaption.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblBuscarCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.lblBuscarCaption.Location = new System.Drawing.Point(26, 46);
+            this.lblBuscarCaption.Name = "lblBuscarCaption";
+            this.lblBuscarCaption.Size = new System.Drawing.Size(90, 15);
+            this.lblBuscarCaption.TabIndex = 11;
+            this.lblBuscarCaption.Text = "Buscar producto:";
+            // 
             // FrmPuntoVenta
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 490);
@@ -526,10 +536,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.pnlSugerencias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).EndInit();
             this.panelTotal.ResumeLayout(false);
             this.panelTotal.PerformLayout();
-            this.pnlSugerencias.ResumeLayout(false);
             this.pnlContenido.ResumeLayout(false);
             this.pnlVentas.ResumeLayout(false);
             this.pnlVentas.PerformLayout();

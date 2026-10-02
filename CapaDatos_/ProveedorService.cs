@@ -14,7 +14,7 @@ namespace CapaDatos_
         Conexion conexion = new Conexion();
 
         SqlDataReader leer;
-        DataTable table = new DataTable();
+
         SqlCommand cmd = new SqlCommand();
 
         public DataTable MostrarProveedor()
@@ -23,9 +23,12 @@ namespace CapaDatos_
             cmd.CommandText = "SELECT * FROM PROVEEDOR";
             cmd.CommandType = CommandType.Text;
             leer = cmd.ExecuteReader();
-            table.Load(leer);
-            Conexion.Conectar().Close();
-            return table;
+
+            DataTable tabla = new DataTable();
+            tabla.Load(leer);
+            cmd.Connection.Close();
+
+            return tabla;
         }
 
         public void InsertarProveedor(string Proveedor,string Telefono)
