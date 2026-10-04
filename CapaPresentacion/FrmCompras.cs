@@ -74,6 +74,22 @@ namespace CapaPresentacion
             }
         }
 
+        private void FrmCompras_MouseDown(object sender, MouseEventArgs e)
+        {
+            Control control = this.GetChildAtPoint(e.Location);
+
+            while (control != null)
+            {
+                if (control == pnlSugerencias || control == pnlProveedores)
+                    return;
+
+                control = control.Parent;
+            }
+
+            OcultarSugerencias();
+            OcultarListaProveedores();
+        }
+
         #endregion
 
         #region Catalogo y proveedores

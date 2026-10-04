@@ -2,6 +2,7 @@
 using CapaDatos_;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,11 @@ namespace CapaNegocio
         public void RealizarCompra(COMPRAS compra)
         {
             cs.RealizarCompra(compra);
+        }
+
+        public DataTable ReporteCompras(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return cs.ReporteCompras(fechaInicio, fechaFin);
         }
     }
 }

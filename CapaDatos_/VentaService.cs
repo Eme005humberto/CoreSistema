@@ -163,5 +163,37 @@ namespace CapaDatos_
                 }
             }
         }
+
+        public DataTable ReporteVentas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            string query = @"
+                SELECT
+                    d.IdDetalleVenta,
+                    d.IdVenta,
+                    p.Producto,
+                    d.PrecioUnitario,
+                    d.Cantidad,
+                    (d.PrecioUnitario * d.Cantidad) AS Total,
+                    d.FechaDetalleVenta
+                FROM DETALLE_VENTAS d
+                INNER JOIN PRODUCTOS p ON p.IdProducto = d.IdProducto
+                WHERE d.FechaDetalleVenta >= @FechaInicio
+                  AND d.FechaDetalleVenta < @FechaFin
+                ORDER BY d.FechaDetalleVenta DESC";
+
+            using (SqlConnection con = Conexion.Conectar())
+            using (SqlCommand cmdReporte = new SqlCommand(query, con))
+            {
+                cmdReporte.Parameters.AddWithValue("@FechaInicio", fechaInicio.Date);
+                cmdReporte.Parameters.AddWithValue(
+                    "@FechaFin",
+                    fechaFin.Date.AddDays(1)
+                );
+
+                DataTable tabla = new DataTable();
+                tabla.Load(cmdReporte.ExecuteReader());
+                return tabla;
+            }
+        }
     }
 }

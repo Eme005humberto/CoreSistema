@@ -1,4 +1,4 @@
-namespace CapaPresentacion
+﻿namespace CapaPresentacion
 {
     partial class FrmReporteCompras
     {
@@ -26,6 +26,12 @@ namespace CapaPresentacion
             this.btnGenerar = new Guna.UI2.WinForms.Guna2Button();
             this.dgvReporte = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnExportarPDF = new Guna.UI2.WinForms.Guna2Button();
+            this.IdDetalleVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaDetalleVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -36,7 +42,7 @@ namespace CapaPresentacion
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(20, 15);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(143, 23);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(157, 23);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Reporte de Compras";
             // 
@@ -65,7 +71,7 @@ namespace CapaPresentacion
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(20, 58);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(67, 17);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(68, 17);
             this.guna2HtmlLabel2.TabIndex = 3;
             this.guna2HtmlLabel2.Text = "Fecha Inicio";
             // 
@@ -76,7 +82,7 @@ namespace CapaPresentacion
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(248, 58);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(24, 17);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(19, 17);
             this.guna2HtmlLabel3.TabIndex = 4;
             this.guna2HtmlLabel3.Text = "Fin";
             // 
@@ -104,8 +110,6 @@ namespace CapaPresentacion
             this.dgvReporte.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(233)))), ((int)(((byte)(251)))));
             this.dgvReporte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvReporte.BackgroundColor = System.Drawing.Color.White;
-            this.dgvReporte.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -115,6 +119,14 @@ namespace CapaPresentacion
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvReporte.ColumnHeadersHeight = 35;
+            this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvReporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdDetalleVenta,
+            this.IdVenta,
+            this.IdProducto,
+            this.PrecioUnitario,
+            this.Cantidad,
+            this.FechaDetalleVenta});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -134,7 +146,6 @@ namespace CapaPresentacion
             this.dgvReporte.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(210)))), ((int)(((byte)(235)))));
             this.dgvReporte.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
             this.dgvReporte.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dgvReporte.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvReporte.ThemeStyle.HeaderStyle.Height = 35;
             this.dgvReporte.ThemeStyle.ReadOnly = true;
             this.dgvReporte.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
@@ -161,6 +172,42 @@ namespace CapaPresentacion
             this.btnExportarPDF.Text = "Exportar PDF";
             this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
             // 
+            // IdDetalleVenta
+            // 
+            this.IdDetalleVenta.HeaderText = "Id Detalle de Venta";
+            this.IdDetalleVenta.Name = "IdDetalleVenta";
+            this.IdDetalleVenta.ReadOnly = true;
+            // 
+            // IdVenta
+            // 
+            this.IdVenta.HeaderText = "Id de la Venta";
+            this.IdVenta.Name = "IdVenta";
+            this.IdVenta.ReadOnly = true;
+            // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "Id del Producto";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio Unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // FechaDetalleVenta
+            // 
+            this.FechaDetalleVenta.HeaderText = "Fecha en la que se realizo la venta";
+            this.FechaDetalleVenta.Name = "FechaDetalleVenta";
+            this.FechaDetalleVenta.ReadOnly = true;
+            // 
             // FrmReporteCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,9 +228,11 @@ namespace CapaPresentacion
             this.Name = "FrmReporteCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reporte de Compras";
+            this.Load += new System.EventHandler(this.FrmReporteCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
@@ -194,5 +243,11 @@ namespace CapaPresentacion
         private Guna.UI2.WinForms.Guna2Button btnGenerar;
         private Guna.UI2.WinForms.Guna2DataGridView dgvReporte;
         private Guna.UI2.WinForms.Guna2Button btnExportarPDF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalleVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaDetalleVenta;
     }
 }
