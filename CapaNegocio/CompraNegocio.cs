@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
+    //
     public class CompraNegocio
     {
         private CompraService cs = new CompraService();
