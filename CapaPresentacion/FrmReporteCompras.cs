@@ -101,7 +101,9 @@ namespace CapaPresentacion
 
         private void btnExportarPDF_Click(object sender, EventArgs e)
         {
-            if (dgvReporte.Rows.Count == 0)
+            DataTable datos = dgvReporte.DataSource as DataTable;
+
+            if (datos == null || datos.Rows.Count == 0)
             {
                 MessageBox.Show(
                     "Genere el reporte antes de exportar",
@@ -112,12 +114,68 @@ namespace CapaPresentacion
                 return;
             }
 
-            MessageBox.Show(
-                "Exportando reporte de compras a PDF...",
-                "Exportar",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            using (SaveFileDialog dialogo = new SaveFileDialog())
+            {
+                dialogo.Filter = "Archivo PDF (*.pdf)|*.pdf";
+                dialogo.FileName = "ReporteCompras_" + DateTime.Now.ToString("yyyyMMdd_HHmm") + ".pdf";
+
+                if (dialogo.ShowDialog(this) != DialogResult.OK)
+                {
+                    return;
+                }
+
+                try
+                {
+                    string rango = dtpFechaInicio.Value.ToString("dd/MM/yyyy")
+                        + " - "
+                        + dtpFechaFin.Value.ToString("dd/MM/yyyy");
+
+                    string[] columnas =
+                    {
+                        "IdDetalleCompra", "IdCompra", "Proveedor", "Producto",
+                        "PrecioUnitario", "Cantidad", "Total", "FechaDetalleCompraa"
+                    };
+
+                    string[] encabezados =
+                    {
+                        "Id Detalle", "Id Compra", "Proveedor", "Producto",
+                        "P. Unitario", "Cant.", "Total", "Fecha"
+                    };
+
+                    string[] formatos =
+                    {
+                        null, null, null, null, "N2", "0", "N2", "dd/MM/yyyy HH:mm"
+                    };
+
+                    ReportePdf.Exportar(
+                        "Reporte de Compras",
+                        rango,
+                        datos,
+                        columnas,
+                        encabezados,
+                        formatos,
+                        dialogo.FileName
+                    );
+
+                    if (MessageBox.Show(
+                            "Reporte exportado correctamente.\n\nDesea abrirlo?",
+                            "Exportar",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start(dialogo.FileName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "No se pudo exportar el PDF: " + ex.Message,
+                        "Reporte de Compras",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+            }
         }
     }
 }
