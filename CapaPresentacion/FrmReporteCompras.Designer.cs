@@ -26,12 +26,14 @@
             this.btnGenerar = new Guna.UI2.WinForms.Guna2Button();
             this.dgvReporte = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnExportarPDF = new Guna.UI2.WinForms.Guna2Button();
-            this.IdDetalleVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDetalleCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaDetalleVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaDetalleCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,12 +123,14 @@
             this.dgvReporte.ColumnHeadersHeight = 35;
             this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvReporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdDetalleVenta,
-            this.IdVenta,
-            this.IdProducto,
+            this.IdDetalleCompra,
+            this.IdCompra,
+            this.Proveedor,
+            this.Producto,
             this.PrecioUnitario,
             this.Cantidad,
-            this.FechaDetalleVenta});
+            this.Total,
+            this.FechaDetalleCompra});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -172,23 +176,29 @@
             this.btnExportarPDF.Text = "Exportar PDF";
             this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
             // 
-            // IdDetalleVenta
+            // IdDetalleCompra
             // 
-            this.IdDetalleVenta.HeaderText = "Id Detalle de Venta";
-            this.IdDetalleVenta.Name = "IdDetalleVenta";
-            this.IdDetalleVenta.ReadOnly = true;
+            this.IdDetalleCompra.HeaderText = "Id Detalle de Compra";
+            this.IdDetalleCompra.Name = "IdDetalleCompra";
+            this.IdDetalleCompra.ReadOnly = true;
             // 
-            // IdVenta
+            // IdCompra
             // 
-            this.IdVenta.HeaderText = "Id de la Venta";
-            this.IdVenta.Name = "IdVenta";
-            this.IdVenta.ReadOnly = true;
+            this.IdCompra.HeaderText = "Id de la Compra";
+            this.IdCompra.Name = "IdCompra";
+            this.IdCompra.ReadOnly = true;
             // 
-            // IdProducto
+            // Proveedor
             // 
-            this.IdProducto.HeaderText = "Id del Producto";
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.ReadOnly = true;
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            this.Proveedor.ReadOnly = true;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
             // 
             // PrecioUnitario
             // 
@@ -202,11 +212,17 @@
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
             // 
-            // FechaDetalleVenta
+            // Total
             // 
-            this.FechaDetalleVenta.HeaderText = "Fecha en la que se realizo la venta";
-            this.FechaDetalleVenta.Name = "FechaDetalleVenta";
-            this.FechaDetalleVenta.ReadOnly = true;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // FechaDetalleCompra
+            // 
+            this.FechaDetalleCompra.HeaderText = "Fecha en la que se realizo la compra";
+            this.FechaDetalleCompra.Name = "FechaDetalleCompra";
+            this.FechaDetalleCompra.ReadOnly = true;
             // 
             // FrmReporteCompras
             // 
@@ -243,11 +259,13 @@
         private Guna.UI2.WinForms.Guna2Button btnGenerar;
         private Guna.UI2.WinForms.Guna2DataGridView dgvReporte;
         private Guna.UI2.WinForms.Guna2Button btnExportarPDF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalleVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalleCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaDetalleVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaDetalleCompra;
     }
 }

@@ -22,13 +22,28 @@ namespace CapaPresentacion
             dgvReporte.AutoGenerateColumns = false;
             dgvReporte.Columns.Clear();
             dgvReporte.Columns.Add("IdDetalleCompra", "Id Detalle");
+            dgvReporte.Columns["IdDetalleCompra"].DataPropertyName = "IdDetalleCompra";
+
             dgvReporte.Columns.Add("IdCompra", "Id Compra");
+            dgvReporte.Columns["IdCompra"].DataPropertyName = "IdCompra";
+
             dgvReporte.Columns.Add("Proveedor", "Proveedor");
+            dgvReporte.Columns["Proveedor"].DataPropertyName = "Proveedor";
+
             dgvReporte.Columns.Add("Producto", "Producto");
+            dgvReporte.Columns["Producto"].DataPropertyName = "Producto";
+
             dgvReporte.Columns.Add("PrecioUnitario", "P. Unitario");
+            dgvReporte.Columns["PrecioUnitario"].DataPropertyName = "PrecioUnitario";
+
             dgvReporte.Columns.Add("Cantidad", "Cant.");
+            dgvReporte.Columns["Cantidad"].DataPropertyName = "Cantidad";
+
             dgvReporte.Columns.Add("Total", "Total");
-            dgvReporte.Columns.Add("FechaDetalleCompraa", "Fecha");
+            dgvReporte.Columns["Total"].DataPropertyName = "Total";
+
+            dgvReporte.Columns.Add("FechaDetalleCompraa", "Fecha en la que se realizo la compra");
+            dgvReporte.Columns["FechaDetalleCompraa"].DataPropertyName = "FechaDetalleCompraa";
 
             dgvReporte.Columns["FechaDetalleCompraa"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
             dgvReporte.Columns["PrecioUnitario"].DefaultCellStyle.Format = "N2";
