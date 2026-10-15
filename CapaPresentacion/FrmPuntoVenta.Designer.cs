@@ -386,6 +386,7 @@
             this.dgvCarrito.ReadOnly = true;
             this.dgvCarrito.RowHeadersVisible = false;
             this.dgvCarrito.Size = new System.Drawing.Size(558, 260);
+            this.dgvCarrito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCarrito.TabIndex = 5;
             this.dgvCarrito.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Carrot;
             this.dgvCarrito.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(216)))), ((int)(((byte)(189)))));
@@ -410,6 +411,7 @@
             this.panelTotal.Location = new System.Drawing.Point(34, 360);
             this.panelTotal.Name = "panelTotal";
             this.panelTotal.Size = new System.Drawing.Size(180, 60);
+            this.panelTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panelTotal.TabIndex = 6;
             // 
             // lblTotalValor
@@ -448,6 +450,7 @@
             this.btnCobrar.Location = new System.Drawing.Point(232, 360);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(170, 60);
+            this.btnCobrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCobrar.TabIndex = 7;
             this.btnCobrar.Text = "COBRAR";
             this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
@@ -467,6 +470,7 @@
             this.btnCancelarVenta.Location = new System.Drawing.Point(423, 360);
             this.btnCancelarVenta.Name = "btnCancelarVenta";
             this.btnCancelarVenta.Size = new System.Drawing.Size(170, 60);
+            this.btnCancelarVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelarVenta.TabIndex = 8;
             this.btnCancelarVenta.Text = "CANCELAR";
             this.btnCancelarVenta.Click += new System.EventHandler(this.btnCancelarVenta_Click);
@@ -531,7 +535,9 @@
             this.Controls.Add(this.pnlContenido);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "FrmPuntoVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Ventas - Punto de Venta";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPuntoVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.guna2Panel1.ResumeLayout(false);

@@ -1,4 +1,4 @@
-namespace CapaPresentacion
+﻿namespace CapaPresentacion
 {
     partial class FrmCompras
     {
@@ -224,6 +224,7 @@ namespace CapaPresentacion
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.RowHeadersVisible = false;
             this.dgvCompras.Size = new System.Drawing.Size(558, 226);
+            this.dgvCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCompras.TabIndex = 9;
             this.dgvCompras.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.dgvCompras.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -242,6 +243,7 @@ namespace CapaPresentacion
             this.panelTotal.Location = new System.Drawing.Point(34, 420);
             this.panelTotal.Name = "panelTotal";
             this.panelTotal.Size = new System.Drawing.Size(180, 56);
+            this.panelTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panelTotal.TabIndex = 10;
             // 
             // lblTotalValor
@@ -279,6 +281,7 @@ namespace CapaPresentacion
             this.btnComprar.Location = new System.Drawing.Point(231, 420);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(170, 56);
+            this.btnComprar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnComprar.TabIndex = 11;
             this.btnComprar.Text = "COMPRAR";
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
@@ -296,6 +299,7 @@ namespace CapaPresentacion
             this.btnCancelar.Location = new System.Drawing.Point(422, 420);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(170, 56);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

@@ -1,4 +1,4 @@
-namespace CapaPresentacion
+﻿namespace CapaPresentacion
 {
     partial class FrmReportes
     {
@@ -45,6 +45,7 @@ namespace CapaPresentacion
             this.btnReporteVentas.Location = new System.Drawing.Point(200, 130);
             this.btnReporteVentas.Name = "btnReporteVentas";
             this.btnReporteVentas.Size = new System.Drawing.Size(220, 60);
+            this.btnReporteVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top));
             this.btnReporteVentas.TabIndex = 1;
             this.btnReporteVentas.Text = "Reporte de Ventas";
             this.btnReporteVentas.Click += new System.EventHandler(this.btnReporteVentas_Click);
@@ -63,6 +64,7 @@ namespace CapaPresentacion
             this.btnReporteCompras.Location = new System.Drawing.Point(200, 210);
             this.btnReporteCompras.Name = "btnReporteCompras";
             this.btnReporteCompras.Size = new System.Drawing.Size(220, 60);
+            this.btnReporteCompras.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top));
             this.btnReporteCompras.TabIndex = 2;
             this.btnReporteCompras.Text = "Reporte de Compras";
             this.btnReporteCompras.Click += new System.EventHandler(this.btnReporteCompras_Click);
