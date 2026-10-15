@@ -56,6 +56,7 @@ namespace CapaPresentacion
             this.txtUsuario.SelectedText = "";
             this.txtUsuario.Size = new System.Drawing.Size(240, 36);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // txtClave
             // 

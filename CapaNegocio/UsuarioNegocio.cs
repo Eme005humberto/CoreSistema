@@ -19,6 +19,11 @@ namespace CapaNegocio
             return table;
         }
 
+        public DataTable Login(string usuario, string clave)
+        {
+            return us.ValidarUsuario(usuario, clave);
+        }
+
         public void insertData(string nombreCompleto, string DUI, string Usuario, string Clave, string Telefono, int IdCargo, int Activo)
         {
             us.InsertarUsuarios(nombreCompleto, DUI, Usuario, Clave, Telefono, IdCargo, Activo);

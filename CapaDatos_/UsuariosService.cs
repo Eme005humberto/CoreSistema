@@ -39,6 +39,33 @@ namespace CapaDatos
             return table;
         }
 
+        public DataTable ValidarUsuario(string usuario, string clave)
+        {
+            DataTable resultado = new DataTable();
+
+            using (SqlConnection conn = Conexion.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(@"
+            SELECT 
+                u.IdUsuario, u.NombreCompleto, u.Usuario, u.IdCargo, c.Cargo
+            FROM USUARIOS u
+            INNER JOIN CARGO c ON u.IdCargo = c.IdCargo
+            WHERE u.Usuario = @Usuario 
+              AND u.Clave = @Clave 
+              AND u.Activo = 1", conn);
+
+                cmd.Parameters.AddWithValue("@Usuario", usuario);
+                cmd.Parameters.AddWithValue("@Clave", clave);
+
+                using (SqlDataReader leer = cmd.ExecuteReader())
+                {
+                    resultado.Load(leer);
+                }
+            }
+
+            return resultado;
+        }
+
         public void InsertarUsuarios(string nombreCompleto, string DUI, string Usuario, string Clave, string Telefono, int IdCargo, int Activo)
         {
             cmd.Connection = Conexion.Conectar();

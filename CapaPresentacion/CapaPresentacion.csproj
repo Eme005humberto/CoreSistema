@@ -322,6 +322,7 @@
       <DependentUpon>FrmReporteCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportePdf.cs" />
+    <Compile Include="Sesion.cs" />
     <Compile Include="FrmInventario.cs">
       <SubType>Form</SubType>
     </Compile>
