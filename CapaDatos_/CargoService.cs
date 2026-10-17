@@ -24,9 +24,12 @@ namespace CapaDatos_
             cmd.CommandText = "SELECT * FROM CARGO";
             cmd.CommandType = CommandType.Text;
             leer = cmd.ExecuteReader();
-            table.Load(leer);
-            Conexion.Conectar().Close();
-            return table;
+
+            DataTable tabla = new DataTable();
+            tabla.Load(leer);
+            cmd.Connection.Close();
+
+            return tabla;
         }
 
         public void InsertarCargo(string Cargo) { 

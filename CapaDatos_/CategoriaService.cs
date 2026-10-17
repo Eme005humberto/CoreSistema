@@ -23,9 +23,12 @@ namespace CapaDatos_
             cmd.CommandText = "SELECT * FROM CATEGORIA";
             cmd.CommandType = CommandType.Text;
             leer = cmd.ExecuteReader();
-            table.Load(leer);
-            Conexion.Conectar().Close();
-            return table;
+
+            DataTable tabla = new DataTable();
+            tabla.Load(leer);
+            cmd.Connection.Close();
+
+            return tabla;
         }
 
         public void InsertarCategoria(string Categoria)
@@ -41,7 +44,7 @@ namespace CapaDatos_
         public void ModificarCategoria(int IdCategoria, string Categoria)
         {
             cmd.Connection = Conexion.Conectar();
-            cmd.CommandText = "SP_ACTUALIZAR_CATEOGIRA";
+            cmd.CommandText = "SP_ACTUALIZAR_CATEGORIA";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Categoria", Categoria);
             cmd.Parameters.AddWithValue("@IdCategoria", IdCategoria);

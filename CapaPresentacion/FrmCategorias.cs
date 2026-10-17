@@ -47,7 +47,19 @@ namespace CapaPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seleccione una categoria para eliminar", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dgvCategorias.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione una categoria para eliminar.");
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvCategorias.CurrentRow.Cells["IdCategoria"].Value);
+
+            if (MessageBox.Show("¿Desea eliminar esta categoria?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                nc.deleteData(id);
+                MostrarDatos();
+            }
         }
 
         private void FrmCategorias_Load(object sender, EventArgs e)
