@@ -9,6 +9,7 @@ namespace CapaPresentacion
     {
         ProductosNegocio pr = new ProductosNegocio();
         private int IdProducto;
+        private int idCategoriaSeleccionada;
         public FrmModificarProducto()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace CapaPresentacion
             }
             string producto = txtProducto.Text.Trim();
             decimal precio = txtPrecio.Value;                     // Guna2NumericUpDown.Value ya es decimal
-            int stock = (int)txtStock.Value;                      // Guna2NumericUpDown.Value también es decimal, castealo a int si tu columna es entera
+            int stock = (int)txtStock.Value;                      // Guna2NumericUpDown.Value tambiï¿½n es decimal, castealo a int si tu columna es entera
             int idCategoria = Convert.ToInt32(cboCategoria.SelectedValue); // asumiendo que ValueMember = "IdCategoria"
 
             pr.updateData(producto, stock, idCategoria, precio, IdProducto);
@@ -39,6 +40,11 @@ namespace CapaPresentacion
         private void FrmModificarProducto_Load(object sender, EventArgs e)
         {
             CargarCategorias();
+
+            if (idCategoriaSeleccionada > 0)
+            {
+                cboCategoria.SelectedValue = idCategoriaSeleccionada;
+            }
         }
         public void CargarCategorias()
         {
@@ -62,8 +68,7 @@ namespace CapaPresentacion
             txtPrecio.Value = Precio;
             txtStock.Value = Stock;
 
-            CargarCategorias();               // se recarga por si acaso (igual que CargarRoles en FrmAgregarUsuario)
-            cboCategoria.SelectedValue = IdCategoria;
+            idCategoriaSeleccionada = IdCategoria;
         }
 
     }

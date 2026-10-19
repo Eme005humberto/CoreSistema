@@ -20,8 +20,10 @@ UPDATE PRODUCTOS SET Producto = @Producto , Stock = @Stock , IdCategoria = @IdCa
 WHERE IdProducto = @IdProducto
 END
 
-CREATE PROCEDURE SP_ELIMINAR_PRODUCTOS
+ALTER PROCEDURE SP_ELIMINAR_PRODUCTOS
 @IdProducto INT
 AS BEGIN
-DELETE FROM PRODUCTOS WHERE IdProducto = @IdProducto
+ UPDATE PRODUCTOS
+    SET Activo = 0
+    WHERE IdProducto = @IdProducto;
 END

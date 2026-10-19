@@ -12,6 +12,7 @@ namespace CapaPresentacion
         private UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
         private CargoService sr = new CargoService();
         private int idUsuario;
+        private int idCargoSeleccionado;
         public FrmModificarUsuario()
         {
             InitializeComponent();
@@ -59,6 +60,11 @@ namespace CapaPresentacion
         private void FrmModificarUsuario_Load(object sender, EventArgs e)
         {
             CargarRoles();//Cargamos el combo box
+
+            if (idCargoSeleccionado > 0)
+            {
+                cboRol.SelectedValue = idCargoSeleccionado;
+            }
         }
 
         //Metodo para cargar el combo box de los roles activos
@@ -87,8 +93,7 @@ namespace CapaPresentacion
             txtTelefono.Text = telefono;
             ChkActivo.Checked = activo == 1;
 
-            CargarRoles();
-            cboRol.SelectedValue = idCargo;
+            idCargoSeleccionado = idCargo;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace CapaDatos_
         public DataTable MostrarProductos()
         {
             cmd.Connection = Conexion.Conectar();
-            cmd.CommandText = "SELECT * FROM PRODUCTOS";
+            cmd.CommandText = "SELECT * FROM PRODUCTOS WHERE Activo = 1";
             cmd.CommandType = CommandType.Text;
             leer = cmd.ExecuteReader();
 

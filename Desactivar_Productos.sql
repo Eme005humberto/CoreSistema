@@ -1,0 +1,1 @@
+ALTER TABLE Productos ADD Activo BIT NOT NULL DEFAULT 1;
