@@ -22,7 +22,7 @@ namespace CapaPresentacion
            
 
             nc.insertData(txtNombre.Text.Trim());
-            MessageBox.Show("Cargo guardado correctamente", "Cargos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Categoria guardada correctamente", "Cargos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DialogResult = DialogResult.OK;
         }
 

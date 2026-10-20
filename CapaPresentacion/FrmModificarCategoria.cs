@@ -22,7 +22,7 @@ namespace CapaPresentacion
                 return;
             }
             cn.updateData(idCategoria,txtNombre.Text);
-            MessageBox.Show("Cargo modificado correctamente", "Cargos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Categoria modificada correctamente", "Cargos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DialogResult = DialogResult.OK;
         }
 

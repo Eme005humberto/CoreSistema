@@ -44,7 +44,6 @@ namespace CapaPresentacion
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Usuario modificado correctamente.");
                 MostrarDatos();
             }
 

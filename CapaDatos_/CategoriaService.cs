@@ -20,7 +20,7 @@ namespace CapaDatos_
         public DataTable MostrarCategorias()
         {
             cmd.Connection = Conexion.Conectar();
-            cmd.CommandText = "SELECT * FROM CATEGORIA";
+            cmd.CommandText = "SELECT * FROM CATEGORIA WHERE Activo = 1";
             cmd.CommandType = CommandType.Text;
             leer = cmd.ExecuteReader();
 
