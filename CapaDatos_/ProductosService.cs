@@ -34,11 +34,11 @@ namespace CapaDatos_
         public DataTable MostrarProductos()
         {
             cmd.Connection = Conexion.Conectar();
-            cmd.CommandText = "SELECT * FROM PRODUCTOS WHERE Activo = 1";
+            cmd.CommandText = "SELECT p.IdProducto, p.Producto, p.Stock, p.IdCategoria, c.Categoria, p.Precio FROM PRODUCTOS p INNER JOIN CATEGORIA c ON p.IdCategoria = c.IdCategoria WHERE p.Activo = 1";
             cmd.CommandType = CommandType.Text;
-            leer = cmd.ExecuteReader();
 
             DataTable tabla = new DataTable();
+            SqlDataReader leer = cmd.ExecuteReader();
             tabla.Load(leer);
             cmd.Connection.Close();
 

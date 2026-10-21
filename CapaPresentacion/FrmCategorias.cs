@@ -1,5 +1,6 @@
 using CapaNegocio;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -18,7 +19,7 @@ namespace CapaPresentacion
             {
                 if (form.ShowDialog(this) == DialogResult.OK)
                 {
-                    MostrarDatos(); // refresca el grid después de agregar
+                    MostrarDatos(); // refresca el grid despuï¿½s de agregar
                 }
             }
         }
@@ -27,7 +28,7 @@ namespace CapaPresentacion
         {
             if (dgvCategorias.CurrentRow == null)
             {
-                MessageBox.Show("Seleccione una categoría para modificar.");
+                MessageBox.Show("Seleccione una categorï¿½a para modificar.");
                 return;
             }
 
@@ -40,7 +41,7 @@ namespace CapaPresentacion
 
                 if (form.ShowDialog(this) == DialogResult.OK)
                 {
-                    MostrarDatos(); // refresca el grid después de modificar
+                    MostrarDatos(); // refresca el grid despuï¿½s de modificar
                 }
             }
         }
@@ -55,7 +56,7 @@ namespace CapaPresentacion
 
             int id = Convert.ToInt32(dgvCategorias.CurrentRow.Cells["IdCategoria"].Value);
 
-            if (MessageBox.Show("¿Desea eliminar esta categoria?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("ï¿½Desea eliminar esta categoria?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 nc.deleteData(id);
                 MostrarDatos();
@@ -71,6 +72,23 @@ namespace CapaPresentacion
         {
             CargoNegocio cn = new CargoNegocio();
             dgvCategorias.DataSource = nc.MostrarCategorias();
+            FiltrarCategorias();
+        }
+
+        private void txtBuscarCategoria_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarCategorias();
+        }
+
+        private void FiltrarCategorias()
+        {
+            DataTable dt = dgvCategorias.DataSource as DataTable;
+            if (dt == null) return;
+
+            string texto = txtBuscarCategoria.Text.Trim().Replace("'", "''");
+            dt.DefaultView.RowFilter = texto.Length == 0
+                ? string.Empty
+                : $"Categoria LIKE '%{texto}%'";
         }
     }
 }

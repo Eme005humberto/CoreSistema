@@ -23,6 +23,23 @@ namespace CapaPresentacion
         {
             ProductosNegocio pr = new ProductosNegocio();
             dgvInventario.DataSource = pr.MostrarInformacion();
+            FiltrarProductos();
+        }
+
+        private void txtBuscarInventario_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarProductos();
+        }
+
+        private void FiltrarProductos()
+        {
+            DataTable dt = dgvInventario.DataSource as DataTable;
+            if (dt == null) return;
+
+            string texto = txtBuscarInventario.Text.Trim().Replace("'", "''");
+            dt.DefaultView.RowFilter = texto.Length == 0
+                ? string.Empty
+                : $"Producto LIKE '%{texto}%'";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -81,6 +98,10 @@ namespace CapaPresentacion
         private void FrmInventario_Load(object sender, EventArgs e)
         {
             MostrarDatos();
+            if (dgvInventario.Columns.Contains("IdCategoria"))
+                dgvInventario.Columns["IdCategoria"].Visible = false;
+            if (dgvInventario.Columns.Contains("Categoria"))
+                dgvInventario.Columns["Categoria"].HeaderText = "Categoria";
         }
     }
 }

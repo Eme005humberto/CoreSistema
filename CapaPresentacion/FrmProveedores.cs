@@ -1,5 +1,6 @@
 using CapaNegocio;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -18,7 +19,7 @@ namespace CapaPresentacion
             {
                 if (form.ShowDialog(this) == DialogResult.OK)
                 {
-                    MostrarDatos(); // refresca el grid después de agregar
+                    MostrarDatos(); // refresca el grid despuï¿½s de agregar
                 }
             }
         }
@@ -49,7 +50,7 @@ namespace CapaPresentacion
 
             int id = Convert.ToInt32(dgvProveedores.CurrentRow.Cells["IdProveedor"].Value);
 
-            if (MessageBox.Show("¿Desea eliminar este proveedor?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("ï¿½Desea eliminar este proveedor?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 pr.DeleteData(id);
                 MostrarDatos();
@@ -65,6 +66,23 @@ namespace CapaPresentacion
         {
             ProveedorNegocio pr = new ProveedorNegocio();
             dgvProveedores.DataSource = pr.MostrarProveedor();
+            FiltrarProveedores();
+        }
+
+        private void txtBuscarProveedor_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarProveedores();
+        }
+
+        private void FiltrarProveedores()
+        {
+            DataTable dt = dgvProveedores.DataSource as DataTable;
+            if (dt == null) return;
+
+            string texto = txtBuscarProveedor.Text.Trim().Replace("'", "''");
+            dt.DefaultView.RowFilter = texto.Length == 0
+                ? string.Empty
+                : $"Proveedor LIKE '%{texto}%'";
         }
     }
 }

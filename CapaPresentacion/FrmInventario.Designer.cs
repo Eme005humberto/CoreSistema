@@ -92,6 +92,7 @@
             this.txtBuscarInventario.SelectedText = "";
             this.txtBuscarInventario.Size = new System.Drawing.Size(280, 32);
             this.txtBuscarInventario.TabIndex = 1;
+            this.txtBuscarInventario.TextChanged += new System.EventHandler(this.txtBuscarInventario_TextChanged);
             // 
             // guna2HtmlLabel1
             // 

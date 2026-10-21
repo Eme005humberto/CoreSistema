@@ -90,6 +90,7 @@
             this.txtBuscar.SelectedText = "";
             this.txtBuscar.Size = new System.Drawing.Size(280, 32);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // guna2HtmlLabel1
             // 

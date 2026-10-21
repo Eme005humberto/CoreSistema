@@ -89,6 +89,7 @@
             this.txtBuscarProveedor.SelectedText = "";
             this.txtBuscarProveedor.Size = new System.Drawing.Size(280, 32);
             this.txtBuscarProveedor.TabIndex = 1;
+            this.txtBuscarProveedor.TextChanged += new System.EventHandler(this.txtBuscarProveedor_TextChanged);
             // 
             // guna2HtmlLabel1
             // 

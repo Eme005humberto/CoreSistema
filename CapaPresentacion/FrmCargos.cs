@@ -2,6 +2,7 @@ using CapaDatos;
 using CapaNegocio;
 using DevExpress.XtraRichEdit.Model;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -19,6 +20,23 @@ namespace CapaPresentacion
         {
             CargoNegocio cn = new CargoNegocio();
             dgvCargos.DataSource = cn.MostrarCargos();
+            FiltrarCargos();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarCargos();
+        }
+
+        private void FiltrarCargos()
+        {
+            DataTable dt = dgvCargos.DataSource as DataTable;
+            if (dt == null) return;
+
+            string texto = txtBuscar.Text.Trim().Replace("'", "''");
+            dt.DefaultView.RowFilter = texto.Length == 0
+                ? string.Empty
+                : $"Cargo LIKE '%{texto}%'";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -27,7 +45,7 @@ namespace CapaPresentacion
             {
                 if (form.ShowDialog(this) == DialogResult.OK)
                 {
-                    MostrarDatos(); // refresca el grid después de agregar
+                    MostrarDatos(); // refresca el grid despuï¿½s de agregar
                 }
             }
         }
@@ -59,7 +77,7 @@ namespace CapaPresentacion
 
             int id = Convert.ToInt32(dgvCargos.CurrentRow.Cells["IdCargo"].Value);
 
-            if (MessageBox.Show("¿Desea eliminar este usuario?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("ï¿½Desea eliminar este usuario?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 cn.deleteData(id);
                 MostrarDatos();

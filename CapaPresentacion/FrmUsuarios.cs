@@ -2,6 +2,7 @@
 using CapaNegocio;
 using DevExpress.XtraPrinting;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -10,10 +11,27 @@ namespace CapaPresentacion
     {
         
         UsuarioNegocio us = new UsuarioNegocio();
-        public void MostrarDatos()
+        private void MostrarDatos()
         {
             UsuarioNegocio pr = new UsuarioNegocio();
             dgvUsuarios.DataSource = pr.MostrarInformacion();
+            FiltrarUsuarios();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarUsuarios();
+        }
+
+        private void FiltrarUsuarios()
+        {
+            DataTable dt = dgvUsuarios.DataSource as DataTable;
+            if (dt == null) return;
+
+            string texto = txtBuscar.Text.Trim().Replace("'", "''");
+            dt.DefaultView.RowFilter = texto.Length == 0
+                ? string.Empty
+                : $"NombreCompleto LIKE '%{texto}%' OR Usuario LIKE '%{texto}%'";
         }
 
         public FrmUsuarios()
@@ -27,7 +45,7 @@ namespace CapaPresentacion
             {
                 if (form.ShowDialog(this) == DialogResult.OK)
                 {
-                    MostrarDatos(); // refresca el grid después de agregar
+                    MostrarDatos(); // refresca el grid despuï¿½s de agregar
                 }
             }
         }
@@ -71,7 +89,7 @@ namespace CapaPresentacion
 
             int id = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["IdUsuario"].Value);
 
-            if (MessageBox.Show("¿Desea eliminar este usuario?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("ï¿½Desea eliminar este usuario?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 us.deleteData(id);
                 MostrarDatos();
