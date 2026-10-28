@@ -22,7 +22,22 @@ namespace CapaPresentacion
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
+                MessageBox.Show("Ingrese el Nombre Completo del empleado", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
                 MessageBox.Show("Ingrese el nombre del usuario", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtClave.Text))
+            {
+                MessageBox.Show("Ingrese la clave del usuario", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtDUI.Text))
+            {
+                MessageBox.Show("Ingrese el DUI del Empleado", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try

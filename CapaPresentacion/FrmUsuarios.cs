@@ -45,6 +45,7 @@ namespace CapaPresentacion
             {
                 if (form.ShowDialog(this) == DialogResult.OK)
                 {
+                    MessageBox.Show("Usuario agregado correctamente.");
                     MostrarDatos(); // refresca el grid despu�s de agregar
                 }
             }

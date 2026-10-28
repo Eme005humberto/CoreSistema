@@ -71,13 +71,13 @@ namespace CapaPresentacion
         {
             if (dgvCargos.CurrentRow == null)
             {
-                MessageBox.Show("Seleccione un usuario para eliminar.");
+                MessageBox.Show("Seleccione el cargo para eliminar.");
                 return;
             }
 
             int id = Convert.ToInt32(dgvCargos.CurrentRow.Cells["IdCargo"].Value);
 
-            if (MessageBox.Show("�Desea eliminar este usuario?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("�Desea eliminar este cargo?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 cn.deleteData(id);
                 MostrarDatos();

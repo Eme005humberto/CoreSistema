@@ -70,7 +70,7 @@ namespace CapaPresentacion
             if (dgvCompras.Columns.Contains("Precio"))
             {
                 dgvCompras.Columns["Precio"].ReadOnly = false;
-                dgvCompras.Columns["Precio"].HeaderText = "Precio compra";
+                dgvCompras.Columns["Precio"].HeaderText = "Precio unitario";
             }
         }
 
