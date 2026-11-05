@@ -23,12 +23,15 @@ CREATE TABLE CATEGORIA(
 IdCategoria INT PRIMARY KEY IDENTITY (1,1),
 Categoria VARCHAR(100)
 )
-
-
+INSERT INTO CARGO(Cargo)VALUES('Administrador')
+SELECT * FROM USUARIOS
+INSERT INTO USUARIOS(NombreCompleto,DUI,Usuario,Clave,Telefono,IdCargo,Activo)
+VALUES('Emerson Humberto','123456-5','Emerson503','Barcelona503','8343-2344',1,1)
 CREATE TABLE PRODUCTOS(
 IdProducto INT PRIMARY KEY IDENTITY(1,1),
 Producto VARCHAR(100),
 Stock INT,
+Precio DECIMAL(18,2) NOT NULL DEFAULT(0.0),
 IdCategoria INT,
 CONSTRAINT  fk_Producto_Categoria FOREIGN KEY(IdCategoria) REFERENCES CATEGORIA(IdCategoria),
 )
@@ -48,6 +51,7 @@ IdProducto INT,
 Cantidad INT,
 Precio DECIMAL(18,2),
 Total DECIMAL(18,2),
+FechaVenta DATETIME DEFAULT GETDATE(),
 CONSTRAINT  fk_Ventas_Producto FOREIGN KEY(IdProducto) REFERENCES PRODUCTOS(IdProducto),
 )
 ALTER TABLE VENTAS

@@ -5,13 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
+using System.Configuration;
 namespace CapaDatos
 {
     public class Conexion
     {
         public static SqlConnection Conectar()
         {
-            string cadena = "Server=DESKTOP-EMM9D05;Database=DbCore;Trusted_Connection=True;TrustServerCertificate=True;";
+            //Variables dinamicas de configuracion de servidor de base de datos
+            string servidor = ConfigurationManager.AppSettings["Servidor"];
+            string baseDatos = ConfigurationManager.AppSettings["BaseDatos"];
+
+            string cadena = $"Server={servidor};Database={baseDatos};Trusted_Connection=True;TrustServerCertificate=True;";//Cadena de Conexion
             SqlConnection conexion = new SqlConnection(cadena); //Inicializamos la conexion
             try
             {
